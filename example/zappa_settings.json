@@ -1,13 +1,18 @@
 {
     "dev_event": {
-       "project_name": "dev_event_zappa_test_flask_app",
+       "project_name": "dev_s3",
        "keep_warm": false,
        "debug": true,
        "log_level": "DEBUG",
        "events": [{
-         "function": "mymodule.myfunc",
-         "expression": "rate(1 minute)"
-         }],
+        "function": "mymodule.myfunc",
+        "event_source": {
+              "arn":  "arn:aws:s3:::landing.logstotal.com",
+              "events": [
+                "s3:ObjectCreated:*"
+              ]
+           }
+        }],
        "aws_region": "us-west-2",
        "s3_bucket": "zappa-81el19pq9-dev-us-west-2",
        "lambda_handler": "app.lambda_handler",
