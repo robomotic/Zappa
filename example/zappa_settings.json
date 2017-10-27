@@ -7,7 +7,7 @@
        "events": [{
         "function": "mymodule.myfunc",
         "event_source": {
-              "arn":  "arn:aws:s3:::landing.logstotal.com",
+              "arn":  "arn:aws:s3:::test.bucket.com",
               "events": [
                 "s3:ObjectCreated:*"
               ]
